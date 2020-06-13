@@ -48,7 +48,7 @@ class TaskController extends Controller
     {
         //
         $task = new Task();
-        $task->title = $request->sentence(1);
+        $task->title = $request->title;
         $task->priority = $request->priority;
         $task->save();
         return response($task->jsonSerialize(), Response::HTTP_CREATED);
