@@ -18,7 +18,7 @@ class TaskController extends Controller
     public function index()
     {
         //
-        return response(Task::all()->jsonSerialize(), Response::HTTP_OK)
+        return response(Task::all()->jsonSerialize(), Response::HTTP_OK);
     }
 
     /**
@@ -51,7 +51,7 @@ class TaskController extends Controller
         $task->title = $request->sentence(1);
         $task->priority = $request->priority;
         $task->save();
-        return response($task->jsonSerialize(), Response::HTTP_CREATED)
+        return response($task->jsonSerialize(), Response::HTTP_CREATED);
 
     }
 
@@ -67,6 +67,6 @@ class TaskController extends Controller
     {
         //
         Task::destroy($id);
-        return response(null, Response::HTTP_OK)
+        return response(null, Response::HTTP_OK);
     }
 }
